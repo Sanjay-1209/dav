@@ -146,7 +146,7 @@ if st.session_state['password_entered']:
     st.success("Password Correct! You can now enter your details.")
     
     # Get the list of sheet names (for example, "Doctor", "Alumni")
-    sheet_names = ['Doctors','Engineers', 'Psychologists', 'Real Estate Agents', 'Investment Bankers', 'Analysts', 'Salesman', 'Teachers', 'Lawyers', 'Architects', 'Others']  # Modify this list based on your actual sheet names
+    sheet_names = ['Doctors','Engineers', 'Psychologists', 'Real Estate Agents', 'Investment Bankers', 'Analysts', 'Salesman', 'Teachers', 'Lawyers', 'Architects', 'Willing to Donate Blood', 'Others']  # Modify this list based on your actual sheet names
 
     # Create a dropdown for selecting the profession
     selected_profession = st.selectbox("Select your Profession", sheet_names)
