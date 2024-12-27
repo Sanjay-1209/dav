@@ -136,7 +136,7 @@ if 'headers' not in st.session_state:
 
 password = st.text_input("Enter Password to Proceed", type="password")
 
-if password == "dav":
+if password == "dav@always&forever":
     st.session_state['password_entered'] = True
 else:
     if password != "" and not st.session_state['password_entered']:
