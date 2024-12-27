@@ -4,10 +4,21 @@ from google.oauth2.service_account import Credentials
 
 # Set up the credentials for accessing Google Sheets
 scopes = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.readonly"]
-creds = Credentials.from_service_account_file(
-    r'C:\Users\sanja\OneDrive\Desktop\DAV Database\myfirst-434417-56e48925530b.json',
-    scopes=scopes
-)
+# creds = Credentials.from_service_account_file(
+#     r'C:\Users\sanja\OneDrive\Desktop\DAV Database\myfirst-434417-56e48925530b.json',
+#     scopes=scopes
+# )
+# client = gspread.authorize(creds)
+
+
+
+# Load credentials from Streamlit secrets
+credentials_dict = st.secrets["google_credentials"]
+
+# Create the credentials object from the secrets
+creds = Credentials.from_service_account_info(credentials_dict, scopes=scopes)
+
+# Authorize the client
 client = gspread.authorize(creds)
 
 # The ID of your Google Sheet (from the URL)
